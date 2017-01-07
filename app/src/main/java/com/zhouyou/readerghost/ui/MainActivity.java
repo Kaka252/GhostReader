@@ -1,9 +1,11 @@
-package com.zhouyou.readerghost;
+package com.zhouyou.readerghost.ui;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.zhouyou.readerghost.R;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 

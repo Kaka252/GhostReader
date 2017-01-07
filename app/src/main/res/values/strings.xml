@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">鬼吹灯全集</string>
     <string name="shelf_title">书架</string>
+    <string name="last_chapter">上一章</string>
+    <string name="next_chapter">下一章</string>
+
 </resources>

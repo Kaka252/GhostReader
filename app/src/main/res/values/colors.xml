@@ -3,4 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="bg_color">@android:color/white</color>
+    <color name="panel_color">#fbfbfb</color>
+    <color name="divider_color">#e9e9e9</color>
+
+    <color name="stroke_color">#262832</color>
 </resources>

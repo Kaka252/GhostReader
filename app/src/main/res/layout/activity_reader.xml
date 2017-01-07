@@ -2,13 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="@color/bg_color"
     android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#fbfbfb">
+        android:background="@color/panel_color">
 
         <ImageView
             android:id="@+id/iv_close"
@@ -16,10 +16,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:paddingLeft="15dip"
-            android:paddingTop="10dip"
             android:paddingBottom="10dip"
+            android:paddingLeft="15dip"
             android:paddingRight="15dip"
+            android:paddingTop="10dip"
             android:src="@mipmap/ic_close" />
 
         <ImageView
@@ -28,10 +28,10 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/iv_close"
-            android:paddingLeft="15dip"
-            android:paddingTop="10dip"
             android:paddingBottom="10dip"
+            android:paddingLeft="15dip"
             android:paddingRight="15dip"
+            android:paddingTop="10dip"
             android:src="@mipmap/ic_menu" />
 
         <ImageView
@@ -40,18 +40,28 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:paddingLeft="15dip"
-            android:paddingTop="10dip"
             android:paddingBottom="10dip"
+            android:paddingLeft="15dip"
             android:paddingRight="15dip"
+            android:paddingTop="10dip"
             android:src="@mipmap/ic_marker_unselect" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="0.3dip"
             android:layout_alignParentBottom="true"
-            android:background="#e9e9e9" />
+            android:background="@color/divider_color" />
 
     </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" />
+
+    <com.zhouyou.readerghost.views.SettingView
+        android:id="@+id/setting_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

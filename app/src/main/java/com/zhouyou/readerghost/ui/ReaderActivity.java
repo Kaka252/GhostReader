@@ -1,4 +1,4 @@
-package com.zhouyou.readerghost;
+package com.zhouyou.readerghost.ui;
 
 import android.app.Activity;
 import android.content.res.AssetManager;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
+
+import com.zhouyou.readerghost.R;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -35,6 +37,7 @@ public class ReaderActivity extends Activity implements View.OnClickListener {
 //            Book book = (new EpubReader()).readEpub(epubInputStream);
 //            Log.i("epublib", "author(s): " + book.getMetadata().getAuthors());
 //            Log.i("epublib", "title: " + book.getTitle());
+//            Log.i("epublib", "author(s): " + book.getMetadata().getAuthors());
 //            logTableOfContents(book.getTableOfContents().getTocReferences(), 0);
 //        } catch (IOException e) {
 //            e.printStackTrace();

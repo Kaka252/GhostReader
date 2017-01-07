@@ -7,7 +7,7 @@
     android:background="@android:color/white"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context="com.zhouyou.readerghost.MainActivity">
+    tools:context="com.zhouyou.readerghost.ui.MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
