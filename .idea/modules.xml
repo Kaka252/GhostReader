@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GhostReader.iml" filepath="$PROJECT_DIR$/GhostReader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PageFlip/PageFlip.iml" filepath="$PROJECT_DIR$/PageFlip/PageFlip.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/util_library/util_library.iml" filepath="$PROJECT_DIR$/util_library/util_library.iml" />
     </modules>
   </component>
 </project>
