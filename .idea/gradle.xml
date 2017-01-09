@@ -8,8 +8,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/PageFlip" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/pageflipper" />
             <option value="$PROJECT_DIR$/util_library" />
           </set>
         </option>
