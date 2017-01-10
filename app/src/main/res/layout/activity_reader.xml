@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_color"
     android:orientation="vertical">
 
+    <com.zhouyou.lib.flipper.CurlView
+        android:id="@+id/curl_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="top"
         android:background="@color/panel_color">
 
         <ImageView
@@ -51,17 +57,12 @@
             android:layout_height="0.3dip"
             android:layout_alignParentBottom="true"
             android:background="@color/divider_color" />
-
     </RelativeLayout>
-
-    <android.support.v4.view.ViewPager
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1" />
 
     <com.zhouyou.readerghost.views.SettingView
         android:id="@+id/setting_view"
+        android:layout_gravity="bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-</LinearLayout>
+</FrameLayout>
