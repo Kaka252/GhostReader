@@ -1,1 +1,1 @@
-include ':app', ':util_library', ':pageflipper'
+include ':app', ':util_library'
