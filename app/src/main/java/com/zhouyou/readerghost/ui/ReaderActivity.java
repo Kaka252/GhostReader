@@ -1,31 +1,24 @@
 package com.zhouyou.readerghost.ui;
 
 import android.app.Activity;
-import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 
-import com.zhouyou.lib.flipper.CurlView;
 import com.zhouyou.readerghost.R;
 import com.zhouyou.readerghost.base.App;
-import com.zhouyou.readerghost.utils.PageProvider;
-import com.zhouyou.readerghost.views.SizeChangedObserver;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.List;
 
 import nl.siegmann.epublib.domain.Book;
-import nl.siegmann.epublib.domain.TOCReference;
-import nl.siegmann.epublib.epub.EpubReader;
+import nl.siegmann.epublib.domain.Resource;
 
 /**
  * Created by zhouyou on 17/1/7.
  */
 
 public class ReaderActivity extends Activity implements View.OnClickListener {
+
+    private static final String TAG = "ReaderActivity";
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +27,11 @@ public class ReaderActivity extends Activity implements View.OnClickListener {
         findViewById(R.id.iv_menu).setOnClickListener(this);
         findViewById(R.id.iv_marker).setOnClickListener(this);
         Book book = App.get().getBook();
+
+
+        Resource resource = book.getContents().get(0);
+        String href = resource.getHref();
+        Log.d(TAG, href);
     }
     @Override
     public void onClick(View v) {

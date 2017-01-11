@@ -5,11 +5,6 @@
     android:background="@color/bg_color"
     android:orientation="vertical">
 
-    <com.zhouyou.lib.flipper.CurlView
-        android:id="@+id/curl_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
