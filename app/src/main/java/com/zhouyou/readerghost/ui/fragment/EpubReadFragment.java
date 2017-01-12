@@ -22,6 +22,7 @@ import android.webkit.JsResult;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -84,6 +85,7 @@ public class EpubReadFragment extends Fragment {
     private Context mContext;
 
     private VerticalSeekbar mScrollSeekbar;
+    private LinearLayout llIndicator;
     private ObservableWebView mWebview;
     private TextSelectionSupport mTextSelectionSupport;
     private TextView mPagesLeftTextView, mMinutesLeftTextView;
@@ -120,8 +122,7 @@ public class EpubReadFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if ((savedInstanceState != null)
                 && savedInstanceState.containsKey(Constants.DATA_INT)
                 && savedInstanceState.containsKey(Constants.DATA_BEAN)) {
@@ -140,8 +141,10 @@ public class EpubReadFragment extends Fragment {
 
         mContext = getActivity();
         mRootView = View.inflate(getActivity(), R.layout.fragment_epub_read, null);
+        llIndicator = (LinearLayout) mRootView.findViewById(R.id.ll_indicator);
         mPagesLeftTextView = (TextView) mRootView.findViewById(R.id.pagesLeft);
         mMinutesLeftTextView = (TextView) mRootView.findViewById(R.id.minutesLeft);
+        mScrollSeekbar = (VerticalSeekbar) mRootView.findViewById(R.id.seek_bar);
         if (getActivity() instanceof OnFragmentCallback)
             mActivityCallback = (OnFragmentCallback) getActivity();
 
@@ -173,16 +176,13 @@ public class EpubReadFragment extends Fragment {
     private void initWebView() {
         String htmlContent = null;
         htmlContent = getHtmlContent(mActivityCallback.getChapterHtmlContent(mPosition));
-
-        mWebview = (ObservableWebView) mRootView.findViewById(com.folioreader.R.id.contentWebView);
+        mWebview = (ObservableWebView) mRootView.findViewById(R.id.web_view);
         mWebview.setFragment(EpubReadFragment.this);
-
         mWebview.getViewTreeObserver().
                 addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
                     @Override
                     public void onGlobalLayout() {
-                        int height =
-                                (int) Math.floor(mWebview.getContentHeight() * mWebview.getScale());
+                        int height = (int) Math.floor(mWebview.getContentHeight() * mWebview.getScale());
                         int webViewHeight = mWebview.getMeasuredHeight();
                         mScrollSeekbar.setMaximum(height - webViewHeight);
                     }
@@ -191,9 +191,7 @@ public class EpubReadFragment extends Fragment {
         mWebview.getSettings().setJavaScriptEnabled(true);
         mWebview.setVerticalScrollBarEnabled(false);
         mWebview.getSettings().setAllowFileAccess(true);
-
         mWebview.setHorizontalScrollBarEnabled(false);
-
         mWebview.addJavascriptInterface(this, "Highlight");
         mWebview.setScrollListener(new ObservableWebView.ScrollListener() {
             @Override
@@ -358,20 +356,15 @@ public class EpubReadFragment extends Fragment {
     }
 
     private void initSeekbar() {
-        mScrollSeekbar = (VerticalSeekbar) mRootView.findViewById(com.folioreader.R.id.scrollSeekbar);
-        mScrollSeekbar.getProgressDrawable()
-                .setColorFilter(getResources()
-                                .getColor(com.folioreader.R.color.app_green),
+        mScrollSeekbar.getProgressDrawable().setColorFilter(getResources().getColor(com.folioreader.R.color.app_green),
                         PorterDuff.Mode.SRC_IN);
     }
 
     private void updatePagesLeftTextBg() {
         if (Config.getConfig().isNightMode()) {
-            mRootView.findViewById(com.folioreader.R.id.indicatorLayout)
-                    .setBackgroundColor(Color.parseColor("#131313"));
+            llIndicator.setBackgroundColor(Color.BLACK);
         } else {
-            mRootView.findViewById(com.folioreader.R.id.indicatorLayout)
-                    .setBackgroundColor(Color.WHITE);
+            llIndicator.setBackgroundColor(Color.WHITE);
         }
     }
 

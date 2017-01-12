@@ -6,17 +6,17 @@
     android:orientation="vertical">
 
     <com.zhouyou.readerghost.views.ObservableWebView
-        android:id="@+id/contentWebView"
+        android:id="@+id/web_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/indicatorLayout"
+        android:layout_above="@+id/ll_indicator"
         android:paddingBottom="2dp" />
 
     <com.zhouyou.readerghost.views.VerticalSeekbar
-        android:id="@+id/scrollSeekbar"
+        android:id="@+id/seek_bar"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_above="@+id/indicatorLayout"
+        android:layout_above="@+id/ll_indicator"
         android:layout_alignParentRight="true"
         android:layout_marginRight="2dp"
         android:animateLayoutChanges="true"
@@ -24,7 +24,7 @@
         android:visibility="invisible" />
 
     <LinearLayout
-        android:id="@+id/indicatorLayout"
+        android:id="@+id/ll_indicator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
