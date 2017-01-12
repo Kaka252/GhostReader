@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.folioreader.activity.FolioActivity;
 import com.zhouyou.readerghost.R;
 
 public class MainActivity extends Activity implements View.OnClickListener {
@@ -20,8 +21,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.iv_read_entry:
-                Intent intent = new Intent(this, ReaderActivity.class);
+                Intent intent = new Intent(this, FolioActivity.class);
+                intent.putExtra(FolioActivity.INTENT_EPUB_SOURCE_TYPE, FolioActivity.EpubSourceType.ASSESTS);
+                intent.putExtra(FolioActivity.INTENT_EPUB_SOURCE_PATH, "ghost_lantern.epub");
                 startActivity(intent);
+//                Intent intent = new Intent(this, ReaderActivity.class);
+//                startActivity(intent);
                 break;
             default:
                 break;
